@@ -24,7 +24,7 @@ const Category = ({ label, href, img, backGround }: Props) => {
     >
       <Link
         className="w-full h-full flex items-center justify-center"
-        href={`${href}`}
+        href={`/products/${href}`}
       >
         {/* ============== Category Image================= */}
         <div className="w-full h-full  relative group">

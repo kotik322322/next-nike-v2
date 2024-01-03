@@ -11,7 +11,6 @@ interface Props {
 }
 
 const getProductsByCategory = async (category: string) => {
-  console.log(category)
   const { data } = await fetch(
     `http://localhost:3000/api/${category}`
   ).then((res) => res.json());

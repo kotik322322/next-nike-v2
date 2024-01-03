@@ -48,7 +48,7 @@ const Header = () => {
             {navigationLinks?.map((item, index) => (
               <li key={index}>
                 <Link
-                  href={`${item?.href}`}
+                  href={`/products/${item?.href}`}
                   className="pb-3 w-full border-b-2 border-transparent hover:border-black transition-all duration-200"
                 >
                   {item?.title}

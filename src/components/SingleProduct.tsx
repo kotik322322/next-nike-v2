@@ -20,7 +20,7 @@ const SingleProduct = ({ product }: ProductProps) => {
   return (
     <div className="w-full relative bg-[#f6f6f6] border border-grey rounded-sm">
       {product && product.isNew && (
-        <span className="px-3 py-1 rounded-full absolute top-3 right-5 bg-grey text-sm z-10">
+        <span className="px-3 py-1 rounded-full absolute top-3 right-5 bg-[#d4d1d1] text-sm z-10">
           New Arrival
         </span>
       )}
