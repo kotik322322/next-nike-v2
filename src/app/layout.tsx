@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
 import { ToastContainer } from "react-toastify";
+import Footer from "@/components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Layout>
           <Header />
           {children}
+          <Footer/>
           <ToastContainer
             position="bottom-left"
             autoClose={2000}
