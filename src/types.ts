@@ -11,19 +11,19 @@ export interface ProductType {
   sizes?: string[];
 }
 
-// export interface ICartProduct extends IProduct {
-//   quantity: number
-// }
+export interface CartProductType extends ProductType {
+  quantity: number
+}
 
-// export interface CartState {
-//   cart: {
-//     cartProducts: ICartProduct[],
-//     cartTotalQuantity: number
-//   }
-// }
+export interface CartState {
+  cart: {
+    cartProducts: CartProductType[],
+    cartTotalQuantity: number
+  }
+}
 
-// export interface WishListState {
-//   wishList: {
-//     wishList: IProduct[]
-//   }
-// } 
+export interface WishListState {
+  wishList: {
+    wishList: ProductType[]
+  }
+} 

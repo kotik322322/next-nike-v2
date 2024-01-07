@@ -1,21 +1,20 @@
 "use client";
 
-// import { addToCart } from "@/store/cartSlice";
-import { ProductType } from "@/types";
-import Image from "next/image";
 import Link from "next/link";
-// import { toast } from "sonner";
-// import { useDispatch } from "react-redux";
-// import ToastSuccess from "./ToastSuccess";
+import Image from "next/image";
+import { ProductType } from "@/types";
+import { addToCart } from "@/store/cartSlice";
+import { useDispatch } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
 // import { addToWishlist } from "@/store/wishlistSlice";
+import "react-toastify/dist/ReactToastify.css";
 
 interface ProductProps {
   product: ProductType;
 }
 
 const SingleProduct = ({ product }: ProductProps) => {
-  // const dispatch = useDispatch();
-
+  const dispatch = useDispatch();
 
   return (
     <div className="w-full relative bg-[#f6f6f6] border border-grey rounded-sm">
@@ -44,7 +43,6 @@ const SingleProduct = ({ product }: ProductProps) => {
           width={250}
           height={250}
           className="mx-auto hover:scale-110 duration-200"
-          // style={{ width: '100%', height: 'auto' }}
         />
       </Link>
 
@@ -55,16 +53,15 @@ const SingleProduct = ({ product }: ProductProps) => {
         </div>
 
         <button
-          onClick={() => ""
-            // dispatch(addToCart(product)) &&
-            // toast(
-            //   <ToastSuccess content={`${product.title} added to the cart`} />
-            // )
+          onClick={() =>
+            dispatch(addToCart(product)) &&
+            toast(`${product.title} added to cart`)
           }
           className="bg-black text-white px-4 py-2 rounded-full text-[12px] hover:bg-bgHover duration-200"
         >
           Add to Cart
         </button>
+        {/* <ToastContainer position="bottom-left"/> */}
       </div>
     </div>
   );

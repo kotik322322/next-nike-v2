@@ -11,14 +11,13 @@ interface Props {
 }
 
 const getProductsByCategory = async (category: string) => {
-  const { data } = await fetch(
-    `http://localhost:3000/api/${category}`
-  ).then((res) => res.json());
+  const { data } = await fetch(`http://localhost:3000/api/products/${category}`).then(
+    (res) => res.json()
+  );
   return data;
 };
 
 const ProductsByCategory = async ({ params: { category } }: Props) => {
-  
   const productList = await getProductsByCategory(category);
 
   return (
@@ -26,11 +25,13 @@ const ProductsByCategory = async ({ params: { category } }: Props) => {
       <h2 className="capitalize text-2xl font-medium my-4">{category}</h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
         {productList.map((product: ProductType) => (
+          // ============ Single Product============================
           <SingleProduct product={product} key={product._id} />
+          // ============ Single Product End =======================
         ))}
       </div>
     </Container>
   );
-}
+};
 
-export default ProductsByCategory
+export default ProductsByCategory;

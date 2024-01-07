@@ -2,23 +2,18 @@
 
 import React, { useEffect } from "react";
 //Components
-// import Container from "./Container";
-// import Sidebar from "./Sidebar";
+import Container from "./Container";
+import Sidebar from "./Sidebar";
+import Logo from "./Logo";
+
 
 //NEXT
 import Link from "next/link";
 import Image from "next/image";
-import Logo from "./Logo";
-import Container from "./Container";
-import Sidebar from "./Sidebar";
 // import { usePathname } from "next/navigation";
 
 //Images
 // import MobileNavigation from "./MobileNav";
-// import Logo from "./Logo";
-// import { links } from "@/constants/data";
-// import { useDispatch, useSelector } from "react-redux";
-// import { actualCartQuantity } from '@/store/cartSlice';
 
 export const navigationLinks = [
   {
@@ -39,7 +34,7 @@ const Header = () => {
   // const pathName = usePathname()
 
   return (
-    <header className="w-full h-20 sticky top-0 right-0 left-0 bg-white shadow-sm z-2">
+    <header className="w-full h-20 sticky top-0 right-0 left-0 bg-white shadow-sm z-20">
       <Container>
         <div className="flex items-center justify-between ">
           <Logo width={80} height={80} />
