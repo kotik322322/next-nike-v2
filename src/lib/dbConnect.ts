@@ -17,8 +17,15 @@
 
 // export default dbConnect;
 
-
 import mongoose from "mongoose";
+
+interface ProcessEnvType {
+  MONGODB_URI: string;
+}
+
+declare const process: {
+  env: ProcessEnvType;
+};
 
 const connectMongoDB = async () => {
   try {
