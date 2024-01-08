@@ -1,4 +1,3 @@
-
 // import images
 import menImg from "../assets/images/category/men.png";
 import womenImg from "../assets/images/category/women.png";
@@ -28,8 +27,8 @@ const Links = [
 
 export default function Home() {
   return (
-    <div className="overflow-hidden">
-      <ul className="w-full h-screen flex items-center">
+    <div className="overflow-hidden" style={{ height: "calc(100vh - 80px)" }}>
+      <ul className="w-full h-screen flex">
         {Links.map((link) => (
           <Category
             key={link.label}

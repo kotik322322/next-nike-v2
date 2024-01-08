@@ -11,6 +11,7 @@ interface Props {
 }
 
 const Category = ({ label, href, img, backGround }: Props) => {
+  // const isDesktop = useMediaQ
   return (
     <motion.li
       style={{ background: backGround }}
@@ -19,7 +20,7 @@ const Category = ({ label, href, img, backGround }: Props) => {
         width: ["100%", "300%", "420%", "400%"],
         transition: { duration: 0.65, ease: "easeInOut" },
       }}
-      className="w-1/3 h-full "
+      className="w-1/3 h-full"
       key={label}
     >
       <Link

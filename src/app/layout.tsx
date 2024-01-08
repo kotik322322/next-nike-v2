@@ -22,9 +22,11 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.className} bg-[#f6f6f6]`}>
         <Layout>
-          <Header />
-          {children}
-          <Footer/>
+          <div className="min-h-screen flex flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+          </div>
+          <Footer />
           <ToastContainer
             position="bottom-left"
             autoClose={2000}
