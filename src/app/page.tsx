@@ -28,7 +28,7 @@ const Links = [
 export default function Home() {
   return (
     <div className="overflow-hidden" style={{ height: "calc(100vh - 80px)" }}>
-      <ul className="w-full h-screen flex">
+      <ul className="w-full h-full flex flex-col md:flex-row">
         {Links.map((link) => (
           <Category
             key={link.label}
