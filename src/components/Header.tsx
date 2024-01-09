@@ -7,11 +7,11 @@ import Logo from "./Logo";
 
 //NEXT
 import Link from "next/link";
+import HeaderLink from "./HeaderLink";
 // import Image from "next/image";
-import { usePathname, useSearchParams } from "next/navigation";
 
 //Images
-// import MobileNavigation from "./MobileNav";
+import MobileNavigation from "./MobileNavigation";
 
 export const navigationLinks = [
   {
@@ -29,8 +29,6 @@ export const navigationLinks = [
 ];
 
 const Header = () => {
-  const pathName = usePathname();
-
   return (
     <header className="w-full h-20 sticky top-0 right-0 left-0 bg-white shadow-sm z-20">
       <Container>
@@ -40,20 +38,13 @@ const Header = () => {
           <ul className="hidden md:flex items-center justify-center gap-x-4 capitalize text-md font-semibold ">
             {navigationLinks?.map((item, index) => (
               <li key={index}>
-                <Link
-                  href={item?.href}
-                  className={`w-full pb-3 border-b-2 border-transparent hover:border-black transition-all duration-200 ${
-                    pathName === item.href && "border-black text-gray-500" 
-                  }`}
-                >
-                  {item?.title}
-                </Link>
+                <HeaderLink title={item?.title} href={item?.href} />
               </li>
             ))}
           </ul>
 
           <Sidebar />
-          {/* <MobileNavigation /> */}
+          <MobileNavigation />
         </div>
       </Container>
     </header>
