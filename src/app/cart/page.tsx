@@ -2,10 +2,11 @@
 
 import Container from "@/components/Container";
 import CartProduct from "@/components/CartProduct";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import { CartProductType, CartState } from "@/types";
 import CartCheckout from "@/components/CartCheckout";
 import Link from "next/link";
+
 
 const Cart = () => {
   const { cartProducts: data } = useSelector((state: CartState) => state.cart);

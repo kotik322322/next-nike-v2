@@ -18,7 +18,8 @@ export interface CartProductType extends ProductType {
 export interface CartState {
   cart: {
     cartProducts: CartProductType[],
-    cartTotalQuantity: number
+    cartTotalQuantity: number,
+    cartTotalAmount:number
   }
 }
 
