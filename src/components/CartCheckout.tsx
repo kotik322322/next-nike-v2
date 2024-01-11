@@ -23,20 +23,20 @@ const CartCheckout = () => {
 
   return (
     <div className="border border-gray-500 rounded-md p-4 lg:w-1/3">
-      <div className="w-full flex flex-col gap-y-1">
+      <div className="w-full flex flex-col gap-y-2">
         <p className="uppercase font-semibold next-base">Order Summary</p>
 
-        <div className="flex justify-between border border-b-black">
+        <div className="flex justify-between border border-transparent border-b-black">
           <p>Subtotal</p>
           <p>{cartTotalAmount.toFixed(2)} $</p>
         </div>
 
-        <div className="flex justify-between border border-b-black">
+        <div className="flex justify-between border border-transparent border-b-black">
           <p>Delivery</p>
           <span>0 $</span>
         </div>
 
-        <div className="flex justify-between text-base font-semibold border border-b-black">
+        <div className="flex justify-between text-base font-semibold border border-transparent border-b-black">
           <p>Total</p>
           <p>{cartTotalAmount.toFixed(2)} $</p>
         </div>
