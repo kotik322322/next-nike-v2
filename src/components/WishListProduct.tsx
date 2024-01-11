@@ -6,7 +6,8 @@ import { ProductType } from "@/types";
 import { useDispatch } from "react-redux";
 import { removeFromWishlist } from "@/store/wishlistSlice";
 import { AiOutlineClose } from "react-icons/ai";
-// import toast from "react-hot-toast";
+import { addToCart } from "@/store/cartSlice";
+import { toast } from "react-hot-toast";
 
 interface WishListProductProps {
   product: ProductType;
@@ -26,17 +27,8 @@ const WishListProduct = ({ product }: WishListProductProps) => {
       <div className="w-full flex flex-col items-center justify-center gap-y-4">
         <div className="w-full flex flex-col items-center justify-between">
           <button
-            onClick={() => dispatch(removeFromWishlist(product)) 
-              // toast.success(
-              //   <div>
-              //     <span className="font-bold">
-              //       {product.title}
-              //     </span>{" "}
-              //     deleted from wish list
-              //   </div>
-              // )
-            }
-            className="w-6 h-6 flex items-center justify-center rounded-full text-white ml-auto bg-black hover:bg-bgHover duration-200" 
+            onClick={() => dispatch(removeFromWishlist(product))}
+            className="w-6 h-6 flex items-center justify-center rounded-full text-white ml-auto bg-black hover:bg-bgHover duration-200"
           >
             <AiOutlineClose />
           </button>
@@ -44,7 +36,13 @@ const WishListProduct = ({ product }: WishListProductProps) => {
         </div>
 
         <div className="w-full flex flex-col gap-y-2">
-          <button className="w-full py-1 flex items-center justify-center gap-x-3 rounded-full bg-black text-sm text-white hover:bg-bgHover duration-200">
+          <button
+            className="w-full py-1 flex items-center justify-center gap-x-3 rounded-full bg-black text-sm text-white hover:bg-bgHover duration-200"
+            onClick={() =>
+              dispatch(addToCart(product)) &&
+              toast.success(`${product.title} added to cart`)
+            }
+          >
             Move to Cart
             <IoBagCheckOutline className="text-xl" />
           </button>

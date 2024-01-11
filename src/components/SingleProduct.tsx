@@ -5,9 +5,7 @@ import Image from "next/image";
 import { ProductType } from "@/types";
 import { addToCart } from "@/store/cartSlice";
 import { useDispatch } from "react-redux";
-import { ToastContainer, toast } from "react-toastify";
-// import { addToWishlist } from "@/store/wishlistSlice";
-import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-hot-toast";
 
 interface ProductProps {
   product: ProductType;
@@ -24,16 +22,11 @@ const SingleProduct = ({ product }: ProductProps) => {
         </span>
       )}
 
-      {/* <div className="absolute top-3 left-5 z-20 cursor-pointer" onClick={() => dispatch(addToWishlist(product))}> 
-        <AiOutlineHeart className="text-2xl text-black"/>
-      </div> */}
-
       <Link
         key={product?._id}
         href={{
           pathname: `${product.category}/${product._id}`,
         }}
-        // href={{ pathname: "/products", query: { _id: product._id } }}
         className="block overflow-hidden"
       >
         <Image
@@ -55,13 +48,12 @@ const SingleProduct = ({ product }: ProductProps) => {
         <button
           onClick={() =>
             dispatch(addToCart(product)) &&
-            toast(`${product.title} added to cart`)
+            toast.success(`${product.title} added to cart`)
           }
           className="bg-black text-white px-4 py-2 rounded-full text-[12px] hover:bg-bgHover duration-200"
         >
           Add to Cart
         </button>
-        {/* <ToastContainer position="bottom-left"/> */}
       </div>
     </div>
   );

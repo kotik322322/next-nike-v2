@@ -3,8 +3,8 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Layout from "@/components/Layout";
-import { ToastContainer } from "react-toastify";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,17 +27,16 @@ export default function RootLayout({
             <main className="flex-1">{children}</main>
           </div>
           <Footer />
-          <ToastContainer
+          <Toaster
             position="bottom-left"
-            autoClose={2000}
-            hideProgressBar={true}
-            newestOnTop={true}
-            closeOnClick
-            rtl={false}
-            pauseOnFocusLoss
-            draggable
-            pauseOnHover
-            theme="dark"
+            toastOptions={{
+              success: {
+                style:{
+                  background: 'black',
+                  color:'white'
+                }
+              }
+            }}
           />
         </Layout>
       </body>

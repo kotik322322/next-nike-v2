@@ -8,7 +8,7 @@ import Container from "@/components/Container";
 import ProductSlider from "@/components/ProductSlider";
 import { ProductType } from "@/types";
 import { addToWishlist } from "@/store/wishlistSlice";
-import { toast } from "react-toastify";
+import { toast } from "react-hot-toast";
 
 const ProductById = ({ product }: { product: ProductType }) => {
   // console.log(product)
@@ -38,7 +38,7 @@ const ProductById = ({ product }: { product: ProductType }) => {
             <div className="flex flex-col items-center justify-center gap-y-3 my-4">
               <button
                 onClick={() =>
-                  dispatch(addToCart(product)) && toast("Added to cart")
+                  dispatch(addToCart(product)) && toast.success(`${product.title} added to cart`)
                 }
                 className="w-full py-3 flex items-center justify-center gap-x-4 rounded-full bg-black text-white hover:bg-bgHover duration-200"
               >
@@ -51,9 +51,7 @@ const ProductById = ({ product }: { product: ProductType }) => {
                 className="w-full py-3 flex items-center justify-center gap-x-4 border border-1 border-black  rounded-full  text-black hover:shadow-xl duration-200 "
                 // text="black"
                 onClick={
-                  () => dispatch(addToWishlist(product))
-                  // toast(
-                  // )
+                  () => dispatch(addToWishlist(product)) && toast.success(`${product.title} added to wish list`)
                 }
               >
                 Add to Wishlist
