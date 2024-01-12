@@ -1,7 +1,6 @@
 // "use client"
 import Container from "@/components/Container";
 import SingleProduct from "@/components/SingleProduct";
-// import Product from "@/components/Product";
 import { ProductType } from "@/types";
 
 interface Props {
@@ -11,9 +10,9 @@ interface Props {
 }
 
 const getProductsByCategory = async (category: string) => {
-  const { data } = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/products/${category}`).then(
-    (res) => res.json()
-  );
+  const { data } = await fetch(
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/products/${category}`
+  ).then((res) => res.json());
   return data;
 };
 
