@@ -20,6 +20,10 @@ const ProductSlider = ({images}: Props) => {
       <div className="flex flex-row md:flex-col gap-y-3 gap-x-1 overflow-x-auto ">
         {images.map((image: string, index: number) => (
           <Image
+          blurDataURL={image}
+          placeholder="blur"
+          loading="lazy"
+          quality={100}
             src={image}
             alt="Slider images"
             width={40}

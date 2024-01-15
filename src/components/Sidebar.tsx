@@ -19,9 +19,9 @@ const Sidebar = () => {
 
   return (
     <div className=" flex items-center gap-x-3 ">
-      <button className="w-[36px] h-[36px] flex items-center justify-center rounded-full hoverEffect">
+      <Link href={"/search"} className="w-[36px] h-[36px] flex items-center justify-center rounded-full hoverEffect">
         <IoIosSearch className="text-2xl" />
-      </button>
+      </Link>
 
       <Link
         href={"/wishlist"}
