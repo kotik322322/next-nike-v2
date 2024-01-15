@@ -1,17 +1,17 @@
 "use client";
 import { ProductType } from "@/types";
 import Image from "next/image";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
 
 const SearchPage = () => {
   const [productList, setProductList] = useState([]);
   const [inputValue, setInputValue] = useState("");
 
-  const handleChange = (e) => {
+  const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
     setInputValue(e.target.value);
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_URL}/api/products/search?item=${inputValue}`
@@ -37,7 +37,7 @@ const SearchPage = () => {
       {/* ======================product List====================== */}
       <div>
         {productList.map((product: ProductType) => (
-          <div>
+          <div key={product._id}>
             <h1>{product.title}</h1>
             <Image
               src={product.mainImg}
