@@ -3,17 +3,19 @@ import { usePathname } from "next/navigation";
 
 interface Props {
   href: string;
-  title: string
+  title: string;
 }
 
-const HeaderLink = ({href, title}: Props) => {
+const HeaderLink = ({ href, title }: Props) => {
   const pathName = usePathname();
+
+  const isActive = pathName.startsWith(href);
 
   return (
     <Link
       href={href}
-      className={`w-full pb-3 border-b-2 border-transparent hover:border-black transition-all duration-200 ${
-        pathName === href && "border-black text-gray-500"
+      className={`w-full pb-3 text-base border-b-2 border-transparent hover:text-black hover:border-black transition-all duration-200 ${
+        isActive ? "text-black" : "text-gray-500"
       }`}
     >
       {title}
