@@ -1,7 +1,10 @@
 "use client";
+import Container from "@/components/Container";
 import { ProductType } from "@/types";
 import Image from "next/image";
+
 import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
+import { IoIosSearch } from "react-icons/io";
 
 const SearchPage = () => {
   const [productList, setProductList] = useState([]);
@@ -14,28 +17,31 @@ const SearchPage = () => {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/api/products/search?item=${inputValue}`
-    );
+      `http://localhost:3000/api/products/search?item=${inputValue}`,    );
 
     const { data } = await response.json();
     setProductList(data);
   };
   return (
-    <div className="absolute top-0 right-0 bottom-0 left-0 z-30 bg-fuchsia-400">
-      <div className="w-full border border-black">
-        <form onSubmit={handleSubmit}>
+    <div className="w-full h-screen absolute top-0 right-0 bottom-0 left-0 z-30 bg-[#f6f6f6]">
+      {/* ======================Serch Form====================== */}
+      <div className="w-full h-1/4 flex items-center justify-center border border-black">
+        <form onSubmit={handleSubmit} className="flex items-center justify-center border border-black">
           <input
             type="text"
             name="searchParametr"
             value={inputValue}
             onChange={handleChange}
           />
-          <button>Search</button>
+          <button className="bg-red-500">
+          <IoIosSearch className="text-2xl" />
+          </button>
         </form>
       </div>
+      {/* ======================Serch Form====================== */}
 
-      {/* ======================product List====================== */}
-      <div>
+      {/* ======================Product List====================== */}
+      <div className="h-3/4 bg-red-500">
         {productList.map((product: ProductType) => (
           <div key={product._id}>
             <h1>{product.title}</h1>
@@ -49,7 +55,7 @@ const SearchPage = () => {
           // <h1>{}</h1>
         ))}
       </div>
-      {/* ======================product List End====================== */}
+      {/* ======================Product List End====================== */}
     </div>
   );
 };
