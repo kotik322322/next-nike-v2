@@ -12,6 +12,7 @@ import {
 import storage from "redux-persist/lib/storage";
 import cartReducer from "./cartSlice";
 import wishlistReducer from "./wishlistSlice";
+import searchReducer from "./searchSlice"
 const persistConfig = {
   key: "root",
   version: 1,
@@ -21,6 +22,7 @@ const persistConfig = {
 const rootReducer = combineReducers({
   cart: cartReducer,
   wishList: wishlistReducer,
+  searchList: searchReducer
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

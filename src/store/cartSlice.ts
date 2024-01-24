@@ -74,7 +74,6 @@ export const cartSlice = createSlice({
         },
         0
       );
-        // console.log(totalAmount)
       state.cartTotalAmount = totalAmount;
     },
   },

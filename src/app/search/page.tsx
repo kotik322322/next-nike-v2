@@ -1,62 +1,41 @@
 "use client";
-import Container from "@/components/Container";
-import { ProductType } from "@/types";
-import Image from "next/image";
 
-import React, { ChangeEvent, FormEvent, useEffect, useState } from "react";
-import { IoIosSearch } from "react-icons/io";
+import Container from "@/components/Container";
+import SearchForm from "@/components/SearchForm";
+import SearchProduct from "@/components/SearchProduct";
+import { ProductType, SearchListState } from "@/types";
+import React from "react";
+import { useSelector } from "react-redux";
 
 const SearchPage = () => {
-  const [productList, setProductList] = useState([]);
-  const [inputValue, setInputValue] = useState("");
+  const { searchList } = useSelector(
+    (state: SearchListState) => state.searchList
+  );
 
-  const handleChange = (e:ChangeEvent<HTMLInputElement>) => {
-    setInputValue(e.target.value);
-  };
 
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    const response = await fetch(
-      `http://localhost:3000/api/products/search?item=${inputValue}`,    );
 
-    const { data } = await response.json();
-    setProductList(data);
-  };
   return (
-    <div className="w-full h-screen absolute top-0 right-0 bottom-0 left-0 z-30 bg-[#f6f6f6]">
+    <Container className="">
+      <h1 className="text-xl md:text-2xl font-medium my-4">Lets try to find your Shoes</h1>
       {/* ======================Serch Form====================== */}
-      <div className="w-full h-1/4 flex items-center justify-center border border-black">
-        <form onSubmit={handleSubmit} className="flex items-center justify-center border border-black">
-          <input
-            type="text"
-            name="searchParametr"
-            value={inputValue}
-            onChange={handleChange}
-          />
-          <button className="bg-red-500">
-          <IoIosSearch className="text-2xl" />
-          </button>
-        </form>
+      <div className="w-full sm:w-2/3 m-auto">
+        <SearchForm />
       </div>
       {/* ======================Serch Form====================== */}
 
       {/* ======================Product List====================== */}
-      <div className="h-3/4 bg-red-500">
-        {productList.map((product: ProductType) => (
-          <div key={product._id}>
-            <h1>{product.title}</h1>
-            <Image
-              src={product.mainImg}
-              alt={product.title}
-              width={100}
-              height={100}
-            />
-          </div>
-          // <h1>{}</h1>
-        ))}
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-x-2">
+        {searchList.length > 0 ? (
+          searchList.map((product: ProductType) => (
+            <SearchProduct key={product._id} product={product} />
+          ))
+        ) : (
+          <h1 className="">No Products</h1>
+        )}
+
       </div>
       {/* ======================Product List End====================== */}
-    </div>
+    </Container>
   );
 };
 
