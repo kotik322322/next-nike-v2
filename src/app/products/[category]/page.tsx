@@ -11,7 +11,7 @@ interface Props {
 
 const getProductsByCategory = async (category: string) => {
   const { data } = await fetch(
-    `${process.env.NEXT_PUBLIC_SERVER_URL}/api/products/${category}`
+    `${process.env.NEXT_PUBLIC_SERVER_URL}/products/${category}`
   ).then((res) => res.json());
   return data;
 };

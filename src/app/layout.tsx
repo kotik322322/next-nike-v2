@@ -28,7 +28,7 @@ export default function RootLayout({
           </div>
           <Footer />
           <Toaster
-            position="top-center"
+            position="bottom-left"
             toastOptions={{
               success: {
                 style:{
