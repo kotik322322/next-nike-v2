@@ -1,8 +1,6 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import Image from "next/image";
 import Sidebar from "./Sidebar";
 import Logo from "./Logo";
 import { IoMenuOutline, IoClose } from "react-icons/io5";
@@ -69,7 +67,7 @@ const MobileNavigation = () => {
             </ul>
             {/* Links End */}
 
-            <Sidebar />
+            <Sidebar onClick={toggleMenu}/>
           </nav>
         </motion.div>
       )}
