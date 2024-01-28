@@ -28,7 +28,7 @@ const CartCheckout = () => {
 
         <div className="flex justify-between border border-transparent border-b-black">
           <p>Subtotal</p>
-          <p>{cartTotalAmount.toFixed(2)} $</p>
+          <p>{cartTotalAmount} $</p>
         </div>
 
         <div className="flex justify-between border border-transparent border-b-black">
@@ -38,7 +38,7 @@ const CartCheckout = () => {
 
         <div className="flex justify-between text-base font-semibold border border-transparent border-b-black">
           <p>Total</p>
-          <p>{cartTotalAmount.toFixed(2)} $</p>
+          <p>{cartTotalAmount} $</p>
         </div>
 
         <div className="flex items-center justify-center gap-x-3 text-2xl">

@@ -74,7 +74,7 @@ export const cartSlice = createSlice({
         },
         0
       );
-      state.cartTotalAmount = totalAmount;
+      state.cartTotalAmount = Number(totalAmount.toFixed(2));
     },
   },
 });
