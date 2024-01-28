@@ -21,7 +21,7 @@ const SearchForm = () => {
     }
 
     const response = await fetch(
-      `${process.env.NEXT_PUBLIC_SERVER_URL}/products/search?item=${encodedSearchQuery}`
+      `${process.env.NEXT_PUBLIC_BASE_API_URL}/api/products/search?item=${encodedSearchQuery}`
     );
 
     const { data } = await response.json();
