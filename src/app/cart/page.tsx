@@ -25,7 +25,7 @@ const Cart = () => {
                 ))}
             </div>
 
-            {data.length > 0 && <CartCheckout />}
+            {/* {data.length > 0 && <CartCheckout />} */}
           </div>
         </Container>
       ) : (

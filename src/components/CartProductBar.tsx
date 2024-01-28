@@ -40,8 +40,7 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
 
       {/* item total  */}
       <span className="">
-        {/* $ {Number(product.price * product.quantity).toFixed(2)} */}
-        $ 12
+        $ {Number(product.price * product.quantity).toFixed(2)}
       </span>
       {/* item total end */}
 
