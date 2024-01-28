@@ -1,9 +1,10 @@
+"use client"
 import { CartProductType } from "@/types";
-import React from "react";
 import { useDispatch } from "react-redux";
 import { decrement, increment, removeFromCart } from "@/store/cartSlice";
 import Link from "next/link";
 import { TfiTrash } from "react-icons/tfi";
+import toast from "react-hot-toast";
 
 const CartProductBar = ({ product }: { product: CartProductType }) => {
   const dispatch = useDispatch();
@@ -28,7 +29,6 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
 
         {/* Item Quantity */}
         <div className="w-10">{product.quantity}</div>
-        {/* <span className="">{itemQuantity}</span> */}
 
         <button
           className="w-6 h-6  text-center rounded-full bg-black hover:bg-bgHover text-white hover:bg-gray-500 duration-200"
@@ -40,7 +40,8 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
 
       {/* item total  */}
       <span className="">
-        $ {Number(product.price * product.quantity).toFixed(2)}
+        {/* $ {Number(product.price * product.quantity).toFixed(2)} */}
+        $ 12
       </span>
       {/* item total end */}
 
@@ -49,12 +50,7 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
         className="w-10 h-10 text-xl sm:text-2xl rounded-full flex items-center justify-center hover:hoverEffect"
         onClick={() => {
           dispatch(removeFromCart(product));
-          // toast.success(
-          //   <div>
-          //     <span className="font-bold">{product.title}</span> deleted from
-          //     cart
-          //   </div>
-          // );
+          toast.success(`${product.title} deleted from the cart`)
         }}
       >
         <TfiTrash />
