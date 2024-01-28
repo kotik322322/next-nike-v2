@@ -40,7 +40,7 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
 
       {/* item total  */}
       <span className="">
-        $ {(product.price * product.quantity).toFixed(2)}
+        $ {Number(product.price * product.quantity).toFixed(2)}
       </span>
       {/* item total end */}
 
@@ -48,7 +48,7 @@ const CartProductBar = ({ product }: { product: CartProductType }) => {
       <button
         className="w-10 h-10 text-xl sm:text-2xl rounded-full flex items-center justify-center hover:hoverEffect"
         onClick={() => {
-          dispatch(removeFromCart(product))
+          dispatch(removeFromCart(product));
           // toast.success(
           //   <div>
           //     <span className="font-bold">{product.title}</span> deleted from

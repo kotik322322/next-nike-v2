@@ -8,7 +8,6 @@ import Link from "next/link";
 const WishList = () => {
   const { wishList } = useSelector((state: WishListState) => state.wishList);
 
-  console.log("wishlist ===>", wishList);
   return (
     <>
       {wishList && wishList?.length > 0 ? (

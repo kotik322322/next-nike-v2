@@ -16,7 +16,6 @@ const SearchPage = () => {
 
   return (
     <Container className="">
-      <h1 className="text-xl md:text-2xl font-medium my-4">Lets try to find your Shoes</h1>
       {/* ======================Serch Form====================== */}
       <div className="w-full sm:w-2/3 m-auto">
         <SearchForm />

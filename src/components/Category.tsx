@@ -43,7 +43,7 @@ const Category = ({ label, href, img, backGround }: Props) => {
       >
         {/* ============== Category Image================= */}
         <div className="w-full h-full  relative group">
-          <h2 className="ml-10 mt-10 md:text-center text-white text-[50px]">{label}</h2>
+          <h2 className="ml-10 mt-10 md:text-center text-white text-[36px]">{label}</h2>
           <h3 className="hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 text-white text-[62px] group-hover:block">
             NIKEONE
           </h3>
