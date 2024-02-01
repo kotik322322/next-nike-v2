@@ -15,7 +15,7 @@ const HeaderLink = ({ href, title }: Props) => {
     <Link
       href={href}
       className={`w-full pb-3 text-base border-b-2 border-transparent hover:text-black hover:border-black transition-all duration-200 ${
-        isActive ? "text-black" : "text-gray-500"
+        isActive ? "text-slate-500" : "text-black"
       }`}
     >
       {title}

@@ -1,11 +1,8 @@
-"use client";
 
 import Link from "next/link";
 import Image from "next/image";
 import { ProductType } from "@/types";
-import { addToCart } from "@/store/cartSlice";
-import { useDispatch } from "react-redux";
-import { toast } from "react-hot-toast";
+import AddToWishListButton from "./AddToWishListButton";
 import AddToCartButton from "./AddToCartButton";
 
 interface ProductProps {
@@ -13,7 +10,6 @@ interface ProductProps {
 }
 
 const SingleProduct = ({ product }: ProductProps) => {
-  const dispatch = useDispatch();
 
   return (
     <div className="w-full relative bg-[#f6f6f6] border border-grey rounded-sm">
@@ -40,13 +36,14 @@ const SingleProduct = ({ product }: ProductProps) => {
         />
       </Link>
 
-      <div className="flex flex-col items-start p-3">
+      <div className="flex flex-col items-start gap-y-2 p-3">
         <div className="flex flex-col gap-y-2 p-3 text-sm">
           <h4 className="text-sm font-semibold">{product.title}</h4>
           <span className="font-medium">$ {product.price}</span>
         </div>
 
         <AddToCartButton product={product} />
+        <AddToWishListButton product={product}/>
       </div>
     </div>
   );

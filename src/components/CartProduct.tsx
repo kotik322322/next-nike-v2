@@ -1,13 +1,10 @@
-"use client";
 
 import React from "react";
 import Image from "next/image";
-import { AiOutlineClose } from "react-icons/ai";
 import Link from "next/link";
 import { CartProductType } from "@/types";
 
 import CartProductBar from "./CartProductBar";
-// import toast from "react-hot-toast";
 
 const CartProduct = ({ product }: { product: CartProductType }) => {
   return (
