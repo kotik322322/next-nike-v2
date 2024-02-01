@@ -8,7 +8,6 @@ export interface ProductType {
   newPrice: number;
   isNew?: boolean;
   category?: string;
-  sizes?: string[];
 }
 
 export interface CartProductType extends ProductType {

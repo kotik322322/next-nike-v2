@@ -6,6 +6,7 @@ import { ProductType } from "@/types";
 import { addToCart } from "@/store/cartSlice";
 import { useDispatch } from "react-redux";
 import { toast } from "react-hot-toast";
+import AddToCartButton from "./AddToCartButton";
 
 interface ProductProps {
   product: ProductType;
@@ -39,21 +40,13 @@ const SingleProduct = ({ product }: ProductProps) => {
         />
       </Link>
 
-      <div className="grid grid-cols-2 place-items-center">
+      <div className="flex flex-col items-start p-3">
         <div className="flex flex-col gap-y-2 p-3 text-sm">
           <h4 className="text-sm font-semibold">{product.title}</h4>
           <span className="font-medium">$ {product.price}</span>
         </div>
 
-        <button
-          onClick={() =>
-            dispatch(addToCart(product)) &&
-            toast.success(`${product.title} added to cart`)
-          }
-          className="bg-black text-white px-4 py-2 rounded-full text-[12px] hover:bg-bgHover duration-200"
-        >
-          Add to Cart
-        </button>
+        <AddToCartButton product={product} />
       </div>
     </div>
   );
