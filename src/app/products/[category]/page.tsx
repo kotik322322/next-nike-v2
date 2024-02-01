@@ -2,6 +2,7 @@ import Container from "@/components/Container";
 import SingleProduct from "@/components/SingleProduct";
 import { ProductType } from "@/types";
 
+
 interface Props {
   params: {
     category: string;
@@ -16,7 +17,7 @@ const getProductsByCategory = async (category: string) => {
 };
 
 const ProductsByCategory = async ({ params: { category } }: Props) => {
-  const productList:ProductType[] = await getProductsByCategory(category);
+  const productList: ProductType[] = await getProductsByCategory(category);
 
   return (
     <Container>
