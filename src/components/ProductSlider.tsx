@@ -30,7 +30,7 @@ const ProductSlider = ({images}: Props) => {
             height={40}
             key={index}
             onClick={() => changeMainImg(image)}
-            className={`w-auto cursor-pointer rounded-md border ${image === selectedImg ? "border-black" : "border-grey" }`}
+            className={`w-auto h-auto cursor-pointer rounded-md border ${image === selectedImg ? "border-black" : "border-grey" }`}
           />
         ))}
       </div>
@@ -41,7 +41,8 @@ const ProductSlider = ({images}: Props) => {
         <Image
           src={selectedImg}
           alt="Main Slider Image"
-          className=""
+          className="w-auto h-auto"
+          priority
           width={400}
           height={400}
         />

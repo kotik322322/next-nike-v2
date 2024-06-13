@@ -52,7 +52,8 @@ const Category = ({ label, href, img, backGround }: Props) => {
             alt="Category Icon"
             width={250}
             height={250}
-            className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200 rotate-[0deg] group-hover:rotate-[25deg]"
+            priority
+            className="absolute w-auto h-auto top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 duration-200 rotate-[0deg] group-hover:rotate-[25deg]"
           />
         </div>
         {/* ============== Category Image End================= */}

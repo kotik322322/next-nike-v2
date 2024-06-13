@@ -32,7 +32,7 @@ const SearchForm = () => {
   return (
     <div>
       <h1 className="text-xl md:text-2xl font-medium my-4">
-        Search results for {searchQuery}:
+        Search results for "{searchQuery}":
       </h1>
       <form
         className="w-full flex justify-center items-center h-10 bg-[#e5e5e5] rounded-full pr-8 overflow-hidden"

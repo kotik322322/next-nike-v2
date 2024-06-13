@@ -9,7 +9,7 @@ interface Props {
 
 const SearchProduct = ({ product }:Props) => {
   return <Link href={`/products/${product.category}/${product._id}`} className="flex flex-col items-center justify-start">
-    <Image src={product.mainImg} width={140} height={140 } alt="Search Prooduct Image"/>
+    <Image src={product.mainImg} width={140} height={140 } alt="Search Product Image"/>
     <h1>{product.title}</h1>
   </Link>;
 };

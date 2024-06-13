@@ -20,6 +20,8 @@ const WishListProduct = ({ product }: WishListProductProps) => {
         alt="Product icon"
         width={120}
         height={120}
+        className="w-auto h-auto"
+        priority
       />
 
       <div className="w-full flex flex-col items-center justify-center gap-y-4">

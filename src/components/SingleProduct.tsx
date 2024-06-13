@@ -32,7 +32,8 @@ const SingleProduct = ({ product }: ProductProps) => {
           alt="Main Image"
           width={250}
           height={250}
-          className="mx-auto hover:scale-110 duration-200"
+          className="mx-auto hover:scale-110 duration-200 w-auto h-auto"
+          // priority
         />
       </Link>
 
